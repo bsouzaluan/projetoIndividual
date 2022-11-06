@@ -32,9 +32,6 @@ body {
 	width: 800px;
 	background-size: cover;
 	background-color:#000;
-	background-image:url("");
-	
-	
 }
 
 .banner-login .banner-img {
@@ -133,7 +130,7 @@ body {
 }
 
 .form-login button:hover {
-	background-color: #b0e9be;
+	background-color: rgb(255, 40, 54);
 	transition: 1s;
 	color: #ffffff;
 }
