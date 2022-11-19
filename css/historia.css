@@ -25,7 +25,7 @@ body {
 
   .conteudo {
     color: #000;
-    border-bottom: solid 3px #ffffff;
+    border-bottom:  3px solid #ffffff;
     width: 100%;
     background-color: #000;
     height: 70px;
@@ -56,16 +56,37 @@ body {
 
 
 
-.banner{
-
-    height:520px;
-    background-color:rgb(182, 182, 182)
+.boxes{
+    background-color: #000;
+    
 }
 
-.banner .carrosel{
-    text-align: center;
-    justify-items: center;
-    justify-content: center;
+
+.imagem{
+    margin-top: 25px;
+    width: 80px;
+    height: 80px;
+    float: left;
+    background-size: 80px 80px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+.box h1 {
+   color: #ffffff;
+   text-align: center;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-top: 25px;
+   
+}
+
+ .box p{
+    color: #ffffff;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    
 }
 
   /* FOOTER */
