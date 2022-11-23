@@ -47,7 +47,7 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -62,7 +62,7 @@ body {
 
 .banner {
 
-  background-image: url(../assets/img/l-oakley.jpg);
+  background-image: url(../assets/img/varios\ romeu\ 1.jpg);
   background-color: #ffffff;
   height: fit-content;
   padding: 40px 0;
@@ -94,6 +94,12 @@ body {
 
 }
 
+
+.frase{
+  display: flex;
+  color: #fff;
+  text-align: center;
+}
 
 
 /*gifs de interaçao*/
