@@ -103,7 +103,7 @@ var minhasQuestoes = [
 var quizContainer = document.getElementById('quiz');
 var resultadoContainer = document.getElementById('resultado');
 var submitButton = document.getElementById('submit');
-
+var pontos = 0;
 generateQuiz(minhasQuestoes, quizContainer, resultadoContainer, submitButton);
 
 function generateQuiz(questoes, quizContainer, resultadoContainer, submitButton){
@@ -164,6 +164,7 @@ function generateQuiz(questoes, quizContainer, resultadoContainer, submitButton)
 			if(userJson===questoes[i].respostaCorreta){
 				
 				numCorreto++;
+				pontos++;
 				
 				
 				jsonContainers[i].style.color = 'lightgreen';
@@ -176,7 +177,9 @@ function generateQuiz(questoes, quizContainer, resultadoContainer, submitButton)
 		}
 
 			
-			resultadoContainer.innerHTML = numCorreto + ' de ' + questoes.length;
+			
+		alert(`você acertou ${numCorreto} de ${questoes.length} questões voce tirou ${pontos}pontos`)
+			registrarPontos (pontos);
 		}
 
 	// show questions right away
@@ -186,4 +189,47 @@ function generateQuiz(questoes, quizContainer, resultadoContainer, submitButton)
 	submitButton.onclick = function(){
 		showResults(questoes, quizContainer, resultadoContainer);
 	}
+}
+
+function registrarPontos(pontos) {
+	
+	var fkUsuario = sessionStorage.ID_USUARIO;
+
+	// Enviando o valor da nova input
+	fetch("/usuarios/registrarPontos", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify({
+			// crie um atributo que recebe o valor recuperado aqui
+			// Agora vá para o arquivo routes/usuario.js
+		   
+			pontosServer: pontos,
+			fkUsuarioServer: fkUsuario
+		})
+	}).then(function (resposta) {
+
+		console.log("resposta: ", resposta);
+
+		if (resposta.ok) {
+			// cardErro.style.display = "block";
+
+			//mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+			// setTimeout(() => {
+			//     window.location = "login.html";
+			// }, "2000")
+			
+			//limparFormulario();
+		   // finalizarAguardar();
+		} else {
+			throw ("Houve um erro ao tentar realizar o cadastro!");
+		}
+	}).catch(function (resposta) {
+		 console.log(`#ERRO: ${resposta}`);
+	   // finalizarAguardar();
+	});
+
+	return false;
 }
