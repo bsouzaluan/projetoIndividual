@@ -10,6 +10,19 @@ body {
 
   }
 
+  body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(88, 88, 88);    
+        
+   
+  }
   .container {
     width: 90%;
     margin: auto;
@@ -46,7 +59,7 @@ body {
   }
   
   .navbar {
-    width: 300px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;

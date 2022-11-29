@@ -6,11 +6,24 @@ html {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(22, 21, 21);
+    background-color: rgb(0, 0, 0);
   
   
   }
   
+  body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(88, 88, 88);    
+        
+   
+  }
  .container {
     width: 90%;
     margin: auto;
@@ -70,6 +83,8 @@ text-align: center;
 }
 .responda{
   align-items: center;
+  background-image: url(../assets/img/fundo-quiz.jpg);
+  background-size: cover;
 }
   .pergunta{
     font-weight: 600;

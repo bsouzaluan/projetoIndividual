@@ -10,6 +10,20 @@ html {
   
   
   }
+
+  body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(88, 88, 88);    
+        
+   
+  }
   
   .container {
     width: 90%;
@@ -60,7 +74,7 @@ html {
 
   
   .sobre {
-    background-color: rgb(22, 21, 21);
+    background: linear-gradient(rgba(43, 43, 43, 0.7), rgba(20, 20, 20, 0.7));
     display: flex;
   }
   
