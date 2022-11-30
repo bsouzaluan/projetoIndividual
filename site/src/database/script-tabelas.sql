@@ -24,6 +24,17 @@ foreign key (fkUsuario) references usuario(idUsuario),
 pontos int 
 );
 
+select *from usuario;
+select*from quiz;
+
+ SELECT pontos,
+		idQuiz AS idUsuario,
+		nome
+        FROM quiz 
+		INNER JOIN usuario 
+		ON fkUsuario = idQuiz order by pontos desc;
+        
+
 
 
 /*
