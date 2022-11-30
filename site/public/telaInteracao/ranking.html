@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ranking.css">
+</head>
+<body>
+    
+    <div class="header">
+        <div class="container">
+            <div class="titulo">
+                <img src="../assets/img/logo x-metal.jpg"
+                    style="width: 200px;">
+                    
+            </div>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="../telaInteracao/tela-interacao.html">Quiz</a>
+                </li>
+                <li class="agora">
+                    <a href="../index.html">Inicial</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="conteudo" id="logo">
+        <div class="container">
+        </div>
+    </div>
+    <div class="ranking">
+
+        <button onclick="atualizarFeed()">clicar</button>
+
+        <div id="feed_container" class="feed-container"></div>
+
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <h4>versão brasileira hebert richards
+                <br>
+                <span class="version">
+                    v1.0.0
+                </span>
+            </h4>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanID = document.createElement("span");
+                        var spanPontos = document.createElement("span");
+                        var spanNome = document.createElement("span");
+                        // var divDescricao = document.createElement("div");
+                         var divButtons = document.createElement("div");
+                        // var btnEditar = document.createElement("button");
+                        // var btnDeletar = document.createElement("button");
+
+
+                        spanID.innerHTML = "ID: <b>" + publicacao.idQuiz + "</b>";
+                        spanPontos.innerHTML = "Pontos: <b>" + publicacao.pontos + "</b>";
+                        spanNome.innerHTML = "Nome: <b>" + publicacao.nome + "</b>";
+                        // divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        // btnEditar.innerHTML = "Editar";
+                        // btnDeletar.innerHTML = "Deletar";
+
+                        divPublicacao.className = "publicacao";
+                        spanPontos.id = "inputNumero" + publicacao.idQuiz;
+                        spanNome.className = "publicacao-nome";
+                        spanPontos.className = "publicacao-titulo";
+                        // divDescricao.className = "publicacao-descricao";
+
+                        divButtons.className = "div-buttons"
+
+                        // btnEditar.className = "publicacao-btn-editar"
+                        // btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+
+                        // btnDeletar.className = "publicacao-btn-editar"
+                        // btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+
+                        divPublicacao.appendChild(spanID);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(spanPontos);
+                        divPublicacao.appendChild(divButtons);
+                        // divPublicacao.appendChild(divDescricao);
+                        // divButtons.appendChild(btnEditar);
+                        // divButtons.appendChild(btnDeletar);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+</script>

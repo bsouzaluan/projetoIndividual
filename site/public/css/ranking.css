@@ -6,7 +6,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(0, 0, 0);
+    background-color: #000;
   
   
   }
@@ -24,7 +24,8 @@ html {
         
    
   }
- .container {
+  
+  .container {
     width: 90%;
     margin: auto;
     display: flex;
@@ -66,77 +67,13 @@ html {
     justify-content: space-between;
     list-style: none;
     color: #ffffff;
-    
   }
-
 
   
 
-  body{
-   
-    font-family: sans-serif;
-    color: #fff
-  }
-
-
-
-.responda h1{
-text-align: center;
+.ranking{
+  height: 400px;
 }
-.responda{
-  align-items: center;
-  background-image: url(../assets/img/fundo-quiz.jpg);
-  background-size: cover;
-  font-size: 20px;
-}
-  .pergunta{
-    font-weight: 600;
-    margin-left: 20px;
-    
-    
-  }
-  .questao {
-      margin-bottom: 20px;
-      margin-left: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      
-      
-  }
-  #submit{
-    font-family: sans-serif;
-    font-size: 20px;
-    background-color: rgb(165, 11, 11);
-    color: #fff;
-    border: 0px;
-    border-radius: 3px;
-    padding: 20px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    margin-left: 20px;
-  }
-  #submit:hover{
-    background-color: rgb(255, 0, 0);
-  }
-
-  #resultado{
-    text-align: center;
-  }
-
-
-    
-   
-
-  
-
-
-
-
-
-
-
-
 
 
   /* FOOTER */
