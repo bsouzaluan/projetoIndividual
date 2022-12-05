@@ -73,6 +73,22 @@ html {
 
 .ranking{
   height: 400px;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+.ranking h1{
+  color: #ffffff;
+  text-align: center;
+}
+
+.feed_container .publicacao{
+  text-align: center;
+  color: #ffffff;
 }
 
 

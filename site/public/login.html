@@ -12,8 +12,8 @@
     <div class="login">
         
         <div class="banner-login">
+            <div class="imagem"></div>
             <div class="banner-img">
-                <img src="../public/assets/img/mjordan-login.jpg"style="height: 100%;">
                 <p>Seja <span>Bem-vindo</span></p>
             </div>
         </div>
@@ -43,10 +43,7 @@ function entrar() {
     var senhaVar = senha_input.value;
 
     if (emailVar == "" || senhaVar == "") {
-       // cardErro.style.display = "block"
-       // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-        //finalizarAguardar();
-        return false;
+       alert(`prencha o campo email e senha`)
     }
     else {
        // setInterval(sumirMensagem, 5000)

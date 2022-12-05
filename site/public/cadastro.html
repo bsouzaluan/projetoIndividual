@@ -69,11 +69,10 @@
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-           // cardErro.style.display = "block"
-            //mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            //finalizarAguardar();
+          alert(`os campos tem que estar todos preenchidos`)
             return false;
+        } if (nomeVar <=3){
+            alert('nome tem que ter mais de três letras')
         }
         else {
          // setInterval(sumirMensagem, 5000)

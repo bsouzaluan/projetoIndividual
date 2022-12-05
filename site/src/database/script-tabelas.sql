@@ -17,23 +17,33 @@ CREATE TABLE usuario (
 	senha VARCHAR(50)
 );
 
+
+CREATE TABLE ranking(
+idRanking int primary key auto_increment,
+posicao int
+);
+
 CREATE TABLE quiz(
 idQuiz int primary key AUTO_INCREMENT,
 fkUsuario int,
 foreign key (fkUsuario) references usuario(idUsuario),
+fkRanking int,
+foreign key (fkRanking) references ranking(idRanking),
 pontos int 
 );
 
 select *from usuario;
 select*from quiz;
 
- SELECT pontos,
-		idQuiz AS idUsuario,
-		nome
+ SELECT quiz.idQuiz,usuario.nome,quiz.pontos
         FROM quiz 
 		INNER JOIN usuario 
-		ON fkUsuario = idQuiz order by pontos desc;
+		ON idQUiz = idUsuario order by pontos desc;
         
+        truncate table usuario;
+        truncate table quiz;
+
+drop database projetoIndividual;
 
 
 

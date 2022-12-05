@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/ranking.css">
 </head>
-<body>
+<body onload="atualizarFeed()">
     
     <div class="header">
         <div class="container">
@@ -31,17 +31,19 @@
         </div>
     </div>
     <div class="ranking">
+        <h1>Veja o Ranking dos usuarios</h1>
 
-        <button onclick="atualizarFeed()">clicar</button>
-
-        <div id="feed_container" class="feed-container"></div>
+        <!-- /<button onclick="atualizarFeed()">clicar</button> -->
+        
+        <div id="feed_container" class="feed-container">
+        </div>
 
     </div>
 
 
     <div class="footer">
         <div class="container">
-            <h4>versão brasileira hebert richards
+            <h4>Desenvolvido por um aluno Sptech
                 <br>
                 <span class="version">
                     v1.0.0
@@ -83,10 +85,10 @@
                         // var btnEditar = document.createElement("button");
                         // var btnDeletar = document.createElement("button");
 
-
-                        spanID.innerHTML = "ID: <b>" + publicacao.idQuiz + "</b>";
-                        spanPontos.innerHTML = "Pontos: <b>" + publicacao.pontos + "</b>";
-                        spanNome.innerHTML = "Nome: <b>" + publicacao.nome + "</b>";
+                        spanID.innerHTML = `${i+1}°`
+                        // spanID.innerHTML = "ID: <b>" + publicacao.idQuiz + "</b>";
+                        spanPontos.innerHTML = `Pontos: <b> ${publicacao.pontos } </b> `;
+                        spanNome.innerHTML = `Nome: <b> ${publicacao.nome}</b>`;
                         // divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
                         // btnEditar.innerHTML = "Editar";
                         // btnDeletar.innerHTML = "Deletar";

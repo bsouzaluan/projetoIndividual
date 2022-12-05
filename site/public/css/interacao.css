@@ -79,32 +79,22 @@ html {
   }
 
 
-
-.responda h1{
-text-align: center;
+#Quiz h1{
+  text-align: center;
 }
-.responda{
+#Quiz .p{
+  margin-left: 20px;
+}
+#Quiz{
   align-items: center;
   background-image: url(../assets/img/fundo-quiz.jpg);
   background-size: cover;
   font-size: 20px;
+  margin-left: 20px;
 }
-  .pergunta{
-    font-weight: 600;
-    margin-left: 20px;
-    
-    
-  }
-  .questao {
-      margin-bottom: 20px;
-      margin-left: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      
-      
-  }
-  #submit{
+  
+
+#button{
     font-family: sans-serif;
     font-size: 20px;
     background-color: rgb(165, 11, 11);
@@ -114,13 +104,14 @@ text-align: center;
     padding: 20px;
     cursor: pointer;
     margin-bottom: 20px;
-    margin-left: 20px;
+    align-items: center;
+    margin-top: 30px;
   }
-  #submit:hover{
+  #button:hover{
     background-color: rgb(255, 0, 0);
   }
 
-  #resultado{
+  .centralizar{
     text-align: center;
   }
 
